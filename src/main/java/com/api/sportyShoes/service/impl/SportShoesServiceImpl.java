@@ -31,26 +31,34 @@ public class SportShoesServiceImpl implements SportShoesService{
 	
 	@PostConstruct
 	public void init() {
-		Shoes s1 = new Shoes(1,"Shoe Name 1","Basketball",1000.24);
-		Shoes s2 = new Shoes(2,"Shoe Name 2","Cricket",1100.24);
-		Shoes s3 = new Shoes(3,"Shoe Name 3","Running",900.24);
-		Shoes s4 = new Shoes(4,"Shoe Name 4","Football",1900.24);
-		
+		Shoes s1 = new Shoes(1,"Shoes Name 1","BasketballShoes",1000.24);
+		Shoes s2 = new Shoes(2,"Shoes Name 2","CricketShoes",1100.24);
+		Shoes s3 = new Shoes(3,"Shoes Name 3","RunningShoes",900.24);
+		Shoes s4 = new Shoes(4,"Shoes Name 4","FootballShoes",1900.24);
+		Shoes s5 = new Shoes(5,"Shoes Name 5","KabadiShoes",2900.24);
+		Shoes s6 = new Shoes(6,"Shoes Name 6","rugbyShoes",3900.24);
 		shoesRepo.save(s1);
 		shoesRepo.save(s2);
 		shoesRepo.save(s3);
 		shoesRepo.save(s4);
+		shoesRepo.save(s5);
+		shoesRepo.save(s6);
+		  
+	    Date d = new Date();  
 		
-		Date d = new Date(0);
-		PurchaseReport pr1 = new PurchaseReport(5,"user_1","Running",d,"adidas_runner:5,nike_airmax:10");
-		PurchaseReport pr2 = new PurchaseReport(6,"user_2","Cricket",d,"adidas_cricket:5,nike_cricket:10");
-		PurchaseReport pr3 = new PurchaseReport(7,"user_3","Basketball",d,"adidas_basketball:5,nike_basketball:10");
-		PurchaseReport pr4 = new PurchaseReport(8,"user_4","Football",d,"adidas_football:5,nike_football:10");
+		PurchaseReport pr1 = new PurchaseReport(7,"user_1","RunningShoes",d,"adidas_runner:5,nike_airmax:10");
+		PurchaseReport pr2 = new PurchaseReport(8,"user_2","CricketShoes",d,"adidas_cricket:5,nike_cricket:10");
+		PurchaseReport pr3 = new PurchaseReport(9,"user_3","BasketballShoes",d,"adidas_basketball:5,nike_basketball:10");
+		PurchaseReport pr4 = new PurchaseReport(10,"user_4","FootballShoes",d,"adidas_football:5,nike_football:10");
+		PurchaseReport pr5 = new PurchaseReport(11,"user_5","KabadiShoes",d,"adidas_kabadi:5,nike_kabadi:10");
+		PurchaseReport pr6 = new PurchaseReport(12,"user_6","rugbyShoes",d,"adidas_rugby:5,nike_rugby:10");
 		
 		prRepo.save(pr1);
 		prRepo.save(pr2);
 		prRepo.save(pr3);
 		prRepo.save(pr4);
+		prRepo.save(pr5);
+		prRepo.save(pr6);
 	}
 
 	public Shoes createShoes(Shoes shoes) throws BusinessException {
@@ -76,7 +84,7 @@ public class SportShoesServiceImpl implements SportShoesService{
 		return shoes;
 	}
 	
-	public Shoes updateShoe(Shoes shoes) {
+	public Shoes updateShoes(Shoes shoes) {
 		return shoesRepo.save(shoes);
 	}
 
@@ -143,12 +151,6 @@ public class SportShoesServiceImpl implements SportShoesService{
 
 	public List<PurchaseReport> getAllPurchaseReportsByDOP(Date dop) {
 		return prRepo.findByDop(dop);
-	}
-
-	@Override
-	public Shoes updateShoes(Shoes shoes) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

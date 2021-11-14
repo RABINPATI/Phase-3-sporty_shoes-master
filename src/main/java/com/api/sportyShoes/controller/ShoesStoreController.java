@@ -85,7 +85,7 @@ public class ShoesStoreController {
 	public ResponseEntity<String> deleteShoeById(@PathVariable int id) {
 		try {
 			implService.deleteShoesById(id);
-			return new ResponseEntity<>("Succesfully deleted shoe with id: " + id, HttpStatus.OK);
+			return new ResponseEntity<>("Succesfully deleted shoes with id: " + id, HttpStatus.OK);
 		} catch (BusinessException e) {
 			errorMap = new LinkedMultiValueMap<>();
 			errorMap.add("errorMessage:", e.getMessage());

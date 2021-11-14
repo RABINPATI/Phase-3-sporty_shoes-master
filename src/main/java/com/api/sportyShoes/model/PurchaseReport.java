@@ -33,6 +33,31 @@ public class PurchaseReport {
 		this.orderList = orderList;
 	}
 
+	public String getPurchasedBy() {
+		return purchasedBy;
+	}
+	public void setPurchasedBy(String purchasedBy) {
+		this.purchasedBy = purchasedBy;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public Date getDop() {
+		return dop;
+	}
+	public void setDop(Date dop) {
+		this.dop = dop;
+	}
+	public String getOrderList() {
+		return orderList;
+	}
+	public void setOrderList(String orderList) {
+		this.orderList = orderList;
+	}
+
 	@Id
 	@GeneratedValue
 	private int id;

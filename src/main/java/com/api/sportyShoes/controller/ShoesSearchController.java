@@ -46,11 +46,6 @@ public class ShoesSearchController {
 	 * @param dateInMs
 	 * @return purchase reports filtered by date of purchase(in millisecond time)
 	 */
-	@GetMapping("/admin/purchaseReport/date/{dateInMs}")
-	public ResponseEntity<List<PurchaseReport>> getAllPurchaseReportsByDop(@PathVariable Long dateInMs){
-		Date dop = new Date(dateInMs);
-		return new ResponseEntity<List<PurchaseReport>>(service.getAllPurchaseReportsByDOP(dop), HttpStatus.OK);
-	}
 	
 	/**
 	 * Purchase Report Search Controller
