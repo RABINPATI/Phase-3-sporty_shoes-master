@@ -23,7 +23,7 @@ import lombok.ToString;
 public class PurchaseReport {
 	
 	
-   public PurchaseReport() {}
+
 	public PurchaseReport(int id, String purchasedBy, String category, Date dop, String orderList) {
 		super();
 		this.id = id;

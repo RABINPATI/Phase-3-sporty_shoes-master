@@ -20,7 +20,7 @@ import lombok.ToString;
 @Data
 public class Shoes {
 	
-	public Shoes (){};
+
 	public Shoes(int id, String name, String category, double price) {
 		super();
 		this.id = id;
